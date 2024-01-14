@@ -41,45 +41,45 @@
 #     opers = [list(input().split()) for _ in range(num_of_oper)]
 #     main(matrix)
 
-wiersze,kolumny=[int(x) for x in input().split()]
-tablica=[]
+wiersze, kolumny = [int(x) for x in input().split()]
+tablica = []
 for i in range(wiersze):
-    linia=[]
-    linia=[int(x) for x in input().split()]
+    linia = []
+    linia = [int(x) for x in input().split()]
     tablica.append(linia)
-k=int(input())
-dzialania=[]
+k = int(input())
+dzialania = []
 for i in range(k):
     dzialania.append(input())
 for i in range(k):
-    dzialanie=dzialania[i].split()
-    nazwa=dzialanie[0]
-    if(nazwa=='RR'):
-        liczba=int(dzialanie[1])
-        nowalinia=[]
+    dzialanie = dzialania[i].split()
+    nazwa = dzialanie[0]
+    if (nazwa == 'RR'):
+        liczba = int(dzialanie[1])
+        nowalinia = []
         for j in range(kolumny):
-            nowalinia.append(tablica[liczba][kolumny-j-1])
-        tablica[liczba]=nowalinia
-    if(nazwa=='RC'):
-        liczba=int(dzialanie[1])
-        nowalinia=[]
+            nowalinia.append(tablica[liczba][kolumny - j - 1])
+        tablica[liczba] = nowalinia
+    if (nazwa == 'RC'):
+        liczba = int(dzialanie[1])
+        nowalinia = []
         for j in range(wiersze):
             nowalinia.append(tablica[j][liczba])
         for j in range(wiersze):
-            tablica[wiersze-1-j][liczba]=nowalinia[j]
-    if(nazwa=='T'):
-        h=0
-        temp=wiersze
-        wiersze=kolumny
-        kolumny=temp
-        nowatablica=[]
+            tablica[wiersze - 1 - j][liczba] = nowalinia[j]
+    if (nazwa == 'T'):
+        h = 0
+        temp = wiersze
+        wiersze = kolumny
+        kolumny = temp
+        nowatablica = []
         for i in range(wiersze):
-            nowalinia=[]
+            nowalinia = []
             for j in range(kolumny):
                 nowalinia.append(tablica[j][i])
             nowatablica.append(nowalinia)
-        tablica=nowatablica
+        tablica = nowatablica
 for i in range(wiersze):
     for j in range(kolumny):
-        print(tablica[i][j],end=' ')
+        print(tablica[i][j], end=' ')
     print()
